@@ -1,0 +1,39 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Keep Plugin commands between vundle#bgein/end.
+" plugin on Github repo
+Plugin 'tomasr/molokai'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+" Plugin 'vimwiki/vimwiki'
+
+" All of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
+
+syntax on
+colorscheme molokai
+set hlsearch
+set number
+
+" vim-powerline
+set laststatus=2
+let g:Powerline_symbols = 'unicode'
+" let g:Powerline_theme = 'solarized256'
+let g:Powerline_symbols_override = { 'LINE': 'L' }
+
+" nerdtree
+map <C-n> :NERDTreeToggle<CR>
+" autocmd VimEnter * NERDTree
+
+" python
+autocmd FileType python setlocal et sta sw=4 sts=4

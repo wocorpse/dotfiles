@@ -1,0 +1,20 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias ll='ls -l --color=auto'
+PS1='[\u@\h \W]\e[1;35m\$ \e[0;37m'
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+#ibus-daemon -x -d
+
+# let vim supprot 256 color scheme
+if [ "$TERM" == "xterm" ];then
+    export TERM=xterm-256color
+fi
